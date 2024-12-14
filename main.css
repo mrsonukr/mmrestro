@@ -1,0 +1,597 @@
+:root {
+    --black: #333;
+    --red: #EB5757;
+    --yellow: #f8a602;
+    --green: #A6C44A;
+    --gray-2: #F5F5F5;
+    --white: #ffffff;
+    --gray-3: #bbb;
+    --gray: #5E5274;
+    --yellow-2: #ffc85a;
+}
+
+
+.black {
+    color: var(--black);
+}
+
+.red {
+    color: var(--red);
+}
+
+.yellow {
+    color: var(--yellow);
+}
+
+.green {
+    color: var(--green);
+}
+
+.gray-2 {
+    color: var(--gray-2);
+}
+
+.white {
+    color: var(--white);
+}
+
+.gray {
+    color: var(--gray);
+}
+
+.mb-10px {
+    margin-bottom: 10px;
+}
+
+* {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--gray-2);
+    display: flex;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+}
+#menu-button {
+    transition: transform 0.5s ease;  /* Smooth transition for the rotation */
+  }
+  
+  /* You can add a class to rotate the menu button */
+  #menu-button.rotated {
+    transform: rotate(90deg);  /* Rotate the menu button 90 degrees */
+  }
+.sidebar {
+    min-width: 230px;
+    height: 100%;
+    background-color: var(--white);
+    padding: 20px;
+    padding-top: 8px;
+    position: fixed; 
+    left: -230px; 
+    transition: transform 0.5s ease; 
+}
+
+
+.sidebar.active {
+    transform: translateX(230px); 
+}
+
+main {
+    transition: margin-left 0.5s ease; 
+}
+
+.sidebar.active + main {
+    margin-left: 230px; 
+}
+
+
+.side-main {
+    position: fixed;
+}
+
+.logo {
+    margin-top: 15px;
+    text-align: center;
+    margin-bottom: 40px;
+    
+}
+.lottie{
+    width: 140px;
+    align-items: center;
+    display: flex;
+}
+.logo h1 {
+    font-size: 26px;
+    color: var(--black);
+    font-weight: bold;
+}
+
+.logo span {
+    color: var(--yellow);
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 15px;
+}
+.menu a{
+    text-decoration: none;
+}
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    color: var(--gray);
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.1s ease;
+    justify-content: left;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.menu-item img {
+    margin-right: 15px;
+    width: 28px;
+    height: 28px;
+}
+
+.menu-item.active,
+.menu-item:hover {
+    background-color: var(--yellow);
+    color: var(--white);
+
+}
+
+.menu-item:hover img,
+.menu-item.active img {
+    filter: brightness(100);
+}
+
+
+.main {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.tool {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.tool img {
+    width: 45px;
+    height: 45px;
+    border-radius: 5px;
+    object-fit: cover;
+    cursor: pointer;
+}
+.menu-btn{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.menu-btn img{
+    display: flex;
+}
+
+.tool h1 {
+    font-size: 20px;
+    white-space: nowrap;
+    margin: 0;
+}
+
+.user-action {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-action .bell-svg {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.search-box {
+    position: relative;
+    flex-grow: 1;
+    max-width: 500px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 10px 10px 10px 40px;
+   
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+
+}
+
+.search-box input::placeholder {
+    color: var(--gray);
+}
+
+.search-icon {
+    position: absolute;
+    left: 15px;
+   
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px !important;
+   
+    height: 20px !important;
+    pointer-events: none;
+   
+}
+
+.search-box input:focus {
+    border: none;
+    outline: none;
+    box-shadow: 2px 2px 5px 0px rgba(146, 146, 146, 0.132);
+}
+
+.banner img {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+}
+
+
+.card {
+    background: var(--white);
+    border-radius: 10px;
+    text-align: left;
+    overflow: hidden;
+    padding: 20px;
+    position: relative;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+   
+    box-shadow: 0 6px 10px rgba(70, 70, 70, 0.15);
+   
+}
+
+.card-header {
+    position: relative;
+}
+
+
+.card-header img {
+    width: 100%;
+    height: 150px;
+    border-radius: 10px;
+    object-fit: fit;
+
+}
+
+.favorite-btn {
+    width: 40px !important;
+    height: 40px !important;
+    position: absolute;
+    top: -60px;
+    right: 1px;
+    background: transparent;
+    padding: 5px;
+    font-size: 18px;
+    cursor: pointer;
+
+}
+
+.restaurant-name {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 3px 0;
+    color: var(--black);
+}
+
+.-item-name {
+    font-size: 12px;
+    color: var(--gray);
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--black);
+}
+
+.add-btn {
+    background: var(--yellow);
+    color: var(--white);
+    border: none;
+    padding: 10px 13px;
+    border-radius: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+  
+  /* Apply this class when the text changes */
+  .added {
+    animation: fadeFromRight 0.5s ease;
+    animation-fill-mode: forwards; /* Ensures the animation stays in the final state */
+  }
+
+hr {
+    margin: 10px 0;
+    border: 1px solid var(--gray-3);
+
+}
+
+.footer-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.item-name {
+    font-size: 12px;
+    color: var(--black);
+    font-weight: 500;
+}
+
+.-item-name img {
+    width: 13px;
+    margin-bottom: -1px;
+    margin-right: 5px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pages button {
+    background: var(--white);
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.pages button:hover {
+    background: var(--yellow);
+    color: var(--white);
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        display: 1;
+    }
+
+    .main {
+        padding: 10px;
+    }
+
+    .menu-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .card {
+        padding: 10px;
+    }
+
+    .cate-card {
+        display: none;
+    }
+}
+
+.category-list {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+   
+}
+
+.category {
+    flex: 1;
+   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+   
+    background: var(--white);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.category:hover {
+    transform: translateY(-5px);
+   
+    box-shadow: 0 6px 10px rgba(70, 70, 70, 0.15);
+   
+}
+
+.category img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 15px;
+    object-fit: contain;
+   
+}
+
+.category span {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--black);
+    text-align: center;
+}
+
+.cate-name {
+    background-color: var(--white);
+    padding: 10px;
+    border-radius: 10px;
+    color: var(--black);
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cate-name img {
+    margin-bottom: -6px;
+}
+h3{
+    font-size: 15px;
+}
+.menu-item-name{
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.menu-item-name img{
+    width: 15px;
+    margin-bottom: 2px;
+    
+}
+.va-btn {
+    text-decoration: none;
+    color: var(--yellow);
+
+}
+.loading-pop {
+    position: fixed; /* Fix the position to the whole screen */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999; /* Ensure it appears above all other content */
+}
+
+/* Blurred background effect */
+.loading-pop .blur-background {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(.5px); /* Adjust blur value as needed */
+    background-color: rgba(255, 249, 185, 0.925); /* Optional: semi-transparent background */
+}
+
+/* Lottie animation container */
+.loading-pop .anim {
+    width: 70px; /* Adjust size of the animation */
+}
+.get-started-btn {
+    background-color: var(--yellow);
+    border: 1px solid var(--yellow) ;
+    padding: 10px 20px;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer ;
+}
+.user-profile {
+    margin-top: 3px;
+    position: relative;
+    display: inline-block;
+    align-items: center;
+}
+
+.profile-popup {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 60px; /* Adjust based on your image size */
+    right: 0; /* Align popup to the right of the image */
+    background-color: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    z-index: 1000;
+    width: 150px; /* Adjust width as needed */
+    padding: 10px 0;
+}
+
+.profile-popup ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.profile-popup ul li {
+    padding: 10px 20px;
+    text-align: left;
+    font-size: 14px;
+}
+
+.profile-popup ul li:hover {
+    background-color: #f1f1f1;
+}
+
+.profile-popup ul li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+}
+/* Customize the scrollbar */
+::-webkit-scrollbar {
+    width: 10px; /* Width of the vertical scrollbar */
+    height: 10px; /* Height of the horizontal scrollbar */
+}
+
+/* Scrollbar track (background) */
+::-webkit-scrollbar-track {
+    background: var(--white); /* Light grey background for the track */
+    border-radius: 10px; /* Optional: rounded corners */
+}
+
+/* Scrollbar thumb (scroll indicator) */
+::-webkit-scrollbar-thumb {
+    background: var(--yellow); /* Red color for the scrollbar thumb */
+    border-radius: 10px; /* Optional: rounded corners */
+    border: 2px solid var(--white); /* Optional: add a gap between thumb and track */
+}
+
+/* Scrollbar thumb hover effect */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--yellow); /* Slightly brighter red when hovering */
+}
+
+/* Scrollbar corner (for both axes) */
+::-webkit-scrollbar-corner {
+    background: var(--white) /* Matches the track background */
+}
